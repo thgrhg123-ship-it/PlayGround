@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#dcefe1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23f7fff5'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='48' fill='%23579b75'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E" />
+  <title>Mosslight — Little Wilds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✿</div><div><div class="brand-name">mosslight</div><div class="brand-sub">LITTLE WILDS · DAY 01</div></div></div>
+      <div class="top-actions">
+        <div class="orb-pill"><span class="orb-icon">◉</span><span id="orbCount">5</span><span class="orb-label">orbs</span></div>
+        <button class="icon-button" id="journalButton" aria-label="Open field journal"><span>▤</span><i id="journalCount">0</i></button>
+      </div>
+    </header>
+
+    <section class="play-area" aria-label="Mosslight game">
+      <canvas id="world" width="960" height="640" aria-label="A peaceful meadow to explore"></canvas>
+      <div class="scene-vignette"></div>
+      <div class="location-chip"><span class="sun-dot"></span><span>FERNWHISTLE MEADOW</span><span class="chip-divider"></span><span id="weather">☀  21°</span></div>
+      <div class="quest-card" id="questCard"><div class="quest-icon">✦</div><div><small>YOUR LITTLE JOURNEY</small><strong id="questText">Find a wild friend</strong></div><span class="quest-arrow">›</span></div>
+      <div class="toast" id="toast" aria-live="polite"></div>
+      <div class="battle-overlay hidden" id="battleOverlay">
+        <div class="battle-scene">
+          <div class="battle-head"><div><small>WILD ENCOUNTER</small><h2 id="battleName">Mossling</h2></div><button class="close-battle" id="runButton" aria-label="Let the wild one go">×</button></div>
+          <div class="wild-orbit"><div class="sparkle s1">✦</div><div class="sparkle s2">✧</div><div class="wild-shadow"></div><canvas id="wildCanvas" width="240" height="190"></canvas></div>
+          <div class="wild-stats"><div class="stat-top"><span>WILD SPIRIT</span><strong id="moodLabel">CURIOUS</strong></div><div class="meter"><div class="meter-fill" id="moodFill"></div></div><div class="meter-caption"><span>SPIRIT</span><span id="spiritValue">100%</span></div></div>
+          <div class="battle-message" id="battleMessage">A little Mossling peeked out of the ferns.</div>
+          <div class="battle-actions"><button class="action-button soothe" id="sootheButton"><span class="action-emoji">♡</span><span><b>Soften</b><small>Help it feel safe</small></span></button><button class="action-button catch" id="catchButton"><span class="action-emoji">◉</span><span><b>Offer an orb</b><small id="catchOdds">Try your luck</small></span></button></div>
+        </div>
+      </div>
+      <div class="collection-overlay hidden" id="collectionOverlay">
+        <section class="journal-card"><div class="journal-head"><div><small>YOUR FIELD JOURNAL</small><h2>Little wilds</h2></div><button class="close-battle" id="closeJournal" aria-label="Close journal">×</button></div><p class="journal-intro">Every friend has a little magic of its own.</p><div class="collection-grid" id="collectionGrid"></div><div class="journal-footer"><span><b id="journalProgress">0 / 4</b> discovered</span><button id="resetButton">Start a new journey</button></div></section>
+      </div>
+      <div class="bottom-hint" id="bottomHint"><span class="hint-key">✧</span> WANDER WHERE THE WILDFLOWERS GROW</div>
+    </section>
+
+    <footer class="controls">
+      <div class="control-tip"><span class="tip-spark">✦</span><span id="tipText">A tiny friend is hiding nearby</span></div>
+      <div class="control-row">
+        <div class="dpad" aria-label="Movement controls"><button class="pad up" data-dir="up" aria-label="Move up">⌃</button><button class="pad left" data-dir="left" aria-label="Move left">‹</button><div class="pad-center">✿</div><button class="pad right" data-dir="right" aria-label="Move right">›</button><button class="pad down" data-dir="down" aria-label="Move down">⌄</button></div>
+        <div class="move-label">MOVE</div>
+        <button class="explore-button" id="exploreButton"><span class="explore-icon">⌖</span><span><b>Explore</b><small>the meadow</small></span></button>
+      </div>
+      <div class="footer-note"><span>☝</span> Use the pad to wander · find a spirit to say hello</div>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

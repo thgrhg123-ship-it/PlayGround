@@ -16,3 +16,12 @@
 - 👤 [Explore the creator's projects](https://go.ondev.store/thgrhg123-ship-it).
 - 🌍 [Create with OMGithub](https://go.ondev.store/).
 <!-- omgithub:readme:end -->
+
+## Mosslight — Little Wilds
+
+A cozy, touch-first monster-catching game that runs directly in a browser. Open `index.html` or serve this folder with any static web server.
+
+- Wander the meadow with the on-screen directional pad or **WASD / arrow keys**.
+- Approach a wild spirit and use **Soften** to improve your chances before offering an orb.
+- Track your discoveries in the field journal. Collection progress and remaining orbs save in your browser.
+
